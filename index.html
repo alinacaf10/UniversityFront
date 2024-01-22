@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
-    <button id="toggleButton">Show Teacher List</button>
-    <div id="teacherListContainer"></div>
-    <script src="script.js"></script>
     
-    </body>
-    </html>
+    <div style="display: flex; justify-content: space-evenly;">
+        <button style="width: 100px; height: 40px;" id="toggleButton">Show Teacher List</button>
+        <div id="teacherListContainer"></div>
+        <div>
+            <label for="studentId">Enter Student ID:</label>
+            <input type="text" id="studentId" placeholder="Enter student ID">
+            <button id="getStudentButton">Get Student</button>
+            <button id="closeButton" style="display: none;">Close</button>
+            <div id="studentInfo"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
