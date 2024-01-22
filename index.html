@@ -4,25 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>University App</title>
 </head>
 
 <body>
+    <div style="display: flex; justify-content: space-around;">
+        <section>
+            <h2>Teacher Operations</h2>
+            <button id="toggleTeacherButton">Show Teacher List</button>
+            <button id="findTeacherButton">Find Teacher by ID</button>
+            <div id="findTeacherContainer" style="display: none;">
+                <label for="teacherId">Enter Teacher ID: </label>
+                <input type="text" id="teacherId" />
+                <button id="getTeacherButton">Get Teacher</button>
+                <div id="teacherInfo"></div>
+            </div>
+            <div id="teacherListContainer"></div>
 
-    
-    <div style="display: flex; justify-content: space-evenly;">
-        <button style="width: 100px; height: 40px;" id="toggleButton">Show Teacher List</button>
-        <div id="teacherListContainer"></div>
-        <div>
-            <label for="studentId">Enter Student ID:</label>
-            <input type="text" id="studentId" placeholder="Enter student ID">
-            <button id="getStudentButton">Get Student</button>
-            <button id="closeButton" style="display: none;">Close</button>
-            <div id="studentInfo"></div>
-        </div>
+        </section>
+
+        <section>
+            <h2>Student Operations</h2>
+            <button id="toggleStudentButton">Show Student List</button>
+            <button id="findStudentButton">Find Student by ID</button>
+            <div id="findStudentContainer" style="display: none;">
+                <label for="studentId">Enter Student ID: </label>
+                <input type="text" id="studentId" />
+                <button id="getStudentButton">Get Student</button>
+                <div id="studentInfo"></div>
+            </div>
+            <div id="studentListContainer"></div>
+
+        </section>
     </div>
     <script src="script.js"></script>
-
 </body>
 
 </html>
