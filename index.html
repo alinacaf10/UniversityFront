@@ -8,39 +8,48 @@
 </head>
 
 <body>
+    <div style="display: flex; justify-content: space-around;">
     <button id="show">Hide</button>
+    <form action="input.html" method="GET">
+        <input type="submit" value="Add Person"/>
+    </form>
+</div>
+
     <div id="hide" style="display: flex; justify-content: space-around;">
         <section>
             <h2>Teacher Operations</h2>
             <button id="toggleTeacherButton">Show Teacher List</button>
             <button id="findTeacherButton">Find Teacher by ID</button>
+
             <div id="findTeacherContainer" style="display: none;">
-                <label for="teacherId">Enter Teacher ID: </label>
+                <label for="teacherId">Enter Teacher ID:</label>
                 <input type="text" id="teacherId" />
                 <button id="getTeacherButton">Get Teacher</button>
                 <div id="teacherInfo"></div>
             </div>
-            <div id="teacherListContainer"></div>
 
+            <div id="teacherListContainer"></div>
         </section>
 
         <section>
             <h2>Student Operations</h2>
             <button id="toggleStudentButton">Show Student List</button>
             <button id="findStudentButton">Find Student by ID</button>
+
             <div id="findStudentContainer" style="display: none;">
-                <label for="studentId">Enter Student ID: </label>
+                <label for="studentId">Enter Student ID:</label>
                 <input type="text" id="studentId" />
                 <button id="getStudentButton">Get Student</button>
                 <div id="studentInfo"></div>
             </div>
-            <div id="studentListContainer"></div>
 
+            <div id="studentListContainer"></div>
         </section>
     </div>
-    <div id=""></div>
+
+
     <script src="script.js"></script>
-    <script src="script2.js"></script>
+    <script src="show-hide.js"></script>
 </body>
 
 </html>
