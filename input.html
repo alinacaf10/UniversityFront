@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Addition</title>
 </head>
+
 <body>
     <div id="input-side">
         <label style="text-decoration: underline;" for="person">Add Person</label><br />
@@ -15,19 +17,21 @@
         <label id="age-experience" for="age">Age:</label><br />
         <input type="text" id="age" /><br />
 
-        <div id="department" style="display:none;">
+        <div id="departmentTeacher" style="display:none;">
             <label for="department">Department:</label><br />
-            <input type="text" />
-        </div> 
+            <input type="text" id="department" />
+        </div>
 
         <select style="margin-top: 10px;" id="person" name="person" onchange="showInput()">
             <option value="student">Student</option>
             <option value="teacher">Teacher</option>
         </select>
-
-        <button style="margin-top: 10px;">Add</button>
+        
+        <button type="submit" id="postPersonbtn" style="margin-top: 10px;">Add</button>
+        <h4 id="response"></h4>
     </div>
     <script src="inputscript.js"></script>
 
 </body>
+
 </html>
