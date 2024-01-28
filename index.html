@@ -5,48 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University App</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Style for buttons */
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        /* Style for the container */
+        #hide {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        /* Style for section headers */
+        h2 {
+            color: #007bff;
+        }
+
+        /* Style for input and label */
+        label, input {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div style="display: flex; justify-content: space-around;">
-    <button id="show">Hide</button>
-    <form action="input.html" method="GET">
-        <input type="submit" value="Add Person"/>
-    </form>
-</div>
+    <div class="container">
+        
+        <div class="d-flex justify-content-around">
+            <button id="show" class="btn btn-primary">Hide</button>
+            <form action="input.html" method="GET">
+                <input type="submit" value="Add Person" class="btn btn-success"/>
+            </form>
+            
+        </div>
 
-    <div id="hide" style="display: flex; justify-content: space-around;">
-        <section>
-            <h2>Teacher Operations</h2>
-            <button id="toggleTeacherButton">Show Teacher List</button>
-            <button id="findTeacherButton">Find Teacher by ID</button>
+        <div id="hide" class="d-flex justify-content-around">
+            <section>
+                <h2>Teacher Operations</h2>
+                <button id="toggleTeacherButton" class="btn btn-info">Show Teacher List</button>
+                <button id="findTeacherButton" class="btn btn-warning">Find Teacher by ID</button>
 
-            <div id="findTeacherContainer" style="display: none;">
-                <label for="teacherId">Enter Teacher ID:</label>
-                <input type="text" id="teacherId" />
-                <button id="getTeacherButton">Get Teacher</button>
-                <div id="teacherInfo"></div>
-            </div>
+                <div id="findTeacherContainer" style="display: none;">
+                    <label for="teacherId">Enter Teacher ID:</label>
+                    <input type="text" id="teacherId" class="form-control"/>
+                    <button id="getTeacherButton" class="btn btn-primary">Get Teacher</button>
+                    <div id="teacherInfo"></div>
+                </div>
 
-            <div id="teacherListContainer"></div>
-        </section>
+                <div id="teacherListContainer"></div>
+            </section>
 
-        <section>
-            <h2>Student Operations</h2>
-            <button id="toggleStudentButton">Show Student List</button>
-            <button id="findStudentButton">Find Student by ID</button>
+            <section>
+                <h2>Student Operations</h2>
+                <button id="toggleStudentButton" class="btn btn-info">Show Student List</button>
+                <button id="findStudentButton" class="btn btn-warning">Find Student by ID</button>
 
-            <div id="findStudentContainer" style="display: none;">
-                <label for="studentId">Enter Student ID:</label>
-                <input type="text" id="studentId" />
-                <button id="getStudentButton">Get Student</button>
-                <div id="studentInfo"></div>
-            </div>
+                <div id="findStudentContainer" style="display: none;">
+                    <label for="studentId">Enter Student ID:</label>
+                    <input type="text" id="studentId" class="form-control"/>
+                    <button id="getStudentButton" class="btn btn-primary">Get Student</button>
+                    <div id="studentInfo"></div>
+                </div>
 
-            <div id="studentListContainer"></div>
-        </section>
+                <div id="studentListContainer"></div>
+            </section>
+        </div>
     </div>
-
 
     <script src="script.js"></script>
     <script src="show-hide.js"></script>
