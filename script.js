@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Eğer öğrenci listesi açıksa, kapat
         if (isTeacherListVisible) {
             teacherListContainer.innerHTML = '';
             isTeacherListVisible = false;
@@ -68,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(teacher => {
-                teacherInfoContainer.innerHTML = '<pre>' + JSON.stringify(teacher, null, 2) + '</pre><button style="font-size:10px">Add Student</button>';
+                teacherInfoContainer.innerHTML = '<pre>' + JSON.stringify(teacher, null, 2) + `</pre><form action="/addStudent.html"><input type="submit" value="Add Student"/></form>`;
             })
             .catch(error => {
                 teacherInfoContainer.innerHTML = '<p>Error: ' + error.message + '</p>';
@@ -82,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
             findStudentContainer.style.display = 'none';
         }
 
-        // Eğer "Get Student" butonu ve input alanı açıksa, kapat
         if (isGetStudentVisible) {
             getStudentContainer.style.display = 'none';
             isGetStudentVisible = false;
@@ -120,14 +118,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Eğer öğrenci listesi açıksa, kapat
         if (isStudentListVisible) {
             studentListContainer.innerHTML = '';
             isStudentListVisible = false;
             toggleStudentButton.textContent = 'Show Student List';
         }
 
-        // Diğer işlemler devam eder...
         fetch('http://localhost:8080/api/auth/student/' + studentId, { mode: 'cors' })
             .then(response => {
                 if (!response.ok) {
