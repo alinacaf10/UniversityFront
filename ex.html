@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Verilere Erişim</title>
+    <script>
+        // Örnek JSON verileri
+        var jsonVeriler = [
+            { "id": 8, "name": "Gavi", "experience": 1, "department": "Barce", "students": [] },
+            { "id": 9, "name": "Saka", "experience": 5, "department": "Arsenal", "students": [] },
+            // Diğer JSON verileri buraya eklenebilir
+        ];
+
+        // Sayfa yüklendiğinde çağrılan fonksiyon
+        function sayfaYuklendi() {
+            var veriContainer = document.getElementById("veri-container");
+
+            // JSON verileri üzerinde döngü yaparak her biri için buton ekleyin
+            jsonVeriler.forEach(function(veri) {
+                var button = document.createElement("button");
+                button.textContent = "Erişim - " + veri.name;
+                button.onclick = function() {
+                    erisimGoster(veri.id);
+                };
+
+                var div = document.createElement("div");
+                div.classList.add("veri");
+                div.setAttribute("data-id", veri.id);
+                div.setAttribute("data-name", veri.name);
+                div.setAttribute("data-experience", veri.experience);
+                div.setAttribute("data-department", veri.department);
+                div.setAttribute("data-students", JSON.stringify(veri.students));
+                div.appendChild(button);
+
+                veriContainer.appendChild(div);
+            });
+        }
+
+        // Her bir butona tıklandığında çalışan fonksiyon
+        function erisimGoster(id) {
+            alert("Seçilen verinin ID'si: " + id);
+        }
+    </script>
+</head>
+<body onload="sayfaYuklendi()">
+    <div id="veri-container">
+        <!-- Veri konteyneri -->
+    </div>
+</body>
+</html>

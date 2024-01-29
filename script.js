@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(teacher => {
-                teacherInfoContainer.innerHTML = '<pre>' + JSON.stringify(teacher, null, 2) + '</pre>';
+                teacherInfoContainer.innerHTML = '<pre>' + JSON.stringify(teacher, null, 2) + '</pre><button style="font-size:10px">Add Student</button>';
             })
             .catch(error => {
                 teacherInfoContainer.innerHTML = '<p>Error: ' + error.message + '</p>';
