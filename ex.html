@@ -19,7 +19,7 @@
             // JSON verileri üzerinde döngü yaparak her biri için buton ekleyin
             jsonVeriler.forEach(function(veri) {
                 var button = document.createElement("button");
-                button.textContent = "Erişim - " + veri.name;
+                button.textContent = "Add Student to Teacher- " + veri.name;
                 button.onclick = function() {
                     erisimGoster(veri.id);
                 };
@@ -45,7 +45,6 @@
 </head>
 <body onload="sayfaYuklendi()">
     <div id="veri-container">
-        <!-- Veri konteyneri -->
     </div>
 </body>
 </html>
